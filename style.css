@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+
+    --cell-side-length: 50px;
+
+}
+#game-box{
+    width:920px;
+    width:calc(var(--cell-side-length) * 16);
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin:0 auto;
+    margin-top:6rem;
+    box-sizing:content-box;
+    border:3px solid black;
+}
+.game-cell{
+
+/* border:1px solid black; */
+width:var(--cell-side-length);
+height:var(--cell-side-length);
+
+}
