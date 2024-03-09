@@ -10,6 +10,8 @@
     --cell-side-length: 50px;
     --soft-white-blue: rgb(157, 194, 218);
     --blue-grey:rgba(3, 80, 94, 0.747);
+    --madimi:'Madimi one', sans-serif;
+    --dancing-script:'Dancing Script', cursive;
 
 }
 
@@ -25,50 +27,73 @@ body{
     display:flex;
     flex-direction:row;
     justify-content:space-around;
-    align-items:center;
-    background-color:orange;
+    /* align-items:center; */
+    background-color:var(--soft-white-blue);
     margin:0 auto;
     margin-top:5rem;
-    padding:3rem 5rem;
+    padding:2.5rem 5rem;
+    border-radius:12px;
+    box-shadow:0px 0px 20px rgba(0, 0, 0, 0.527);
 }
 
 .button-box{
     display:flex;
+    flex:1;
     flex-direction:column;
-    justify-content:space-around;
     align-items:center;
-    padding:0 5rem;
+    justify-content:space-evenly;
+    padding-right:5rem;
+  
 }
+h1{
+    font-family: var(--madimi);
+    color:rgb(212, 56, 35);
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    font-size:3rem;
+    font-weight:800;
+}
+
 .button{
-    margin:2rem 0;
-}
-
-#clear-btn{
     
-    background-color:var(--soft-white-blue);
+    background-color:rgb(23, 96, 179);
+    color:rgb(255, 255, 255);
+    /* border:2px solid black; */
     border:none;
-    font-size:2rem;
-    width: 120px;
+    text-shadow: 2px 2px 1px rgb(29, 26, 26);
+    font-size:1.35rem;
+    width: 140px;
     height:60px;
-    border-radius:3px;
-    border:1px solid rgba(0, 13, 73, 0.363);
+    border-radius:4px;
+    font-family:var(--madimi);
+    font-weight:900;
+    box-shadow:2px 2px rgba(0, 0, 0, 0.993);
+   
 
+
+}
+.button:hover{
+    cursor:pointer;
 }
 #game-screen{
     background-color:white;
-    width:920px;
+    
     width:calc(var(--cell-side-length) * 16);
+    height:calc(var(--cell-side-length) * 16);
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
     box-sizing:content-box;
+    border:5px solid rgba(128, 128, 128, 0.233);
+    border-radius:12px;
    
-    box-shadow:5px 5px 25px rgba(14, 42, 61, 0.644);
 }
 .game-cell{
 
-/* border:1px solid black; */
 width:var(--cell-side-length);
 height:var(--cell-side-length);
 
 }
+.game-cell:hover{
+    cursor:crosshair;
+}
+
