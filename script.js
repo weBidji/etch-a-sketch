@@ -1,10 +1,10 @@
-const gameBox = document.getElementById('game-box');
+const gameScreen = document.getElementById('game-screen');
 
 function createCell(){
 
     let gameCell = document.createElement('div');
     gameCell.classList.add('game-cell');
-    gameBox.appendChild(gameCell);
+    gameScreen.appendChild(gameCell);
 
 }
 function createGrid(){

@@ -8,18 +8,62 @@
 :root{
 
     --cell-side-length: 50px;
+    --soft-white-blue: rgb(157, 194, 218);
+    --blue-grey:rgba(3, 80, 94, 0.747);
 
 }
-#game-box{
+
+body{
+    background-color:var(--blue-grey);
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.game-box{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    background-color:orange;
+    margin:0 auto;
+    margin-top:5rem;
+    padding:3rem 5rem;
+}
+
+.button-box{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    padding:0 5rem;
+}
+.button{
+    margin:2rem 0;
+}
+
+#clear-btn{
+    
+    background-color:var(--soft-white-blue);
+    border:none;
+    font-size:2rem;
+    width: 120px;
+    height:60px;
+    border-radius:3px;
+    border:1px solid rgba(0, 13, 73, 0.363);
+
+}
+#game-screen{
+    background-color:white;
     width:920px;
     width:calc(var(--cell-side-length) * 16);
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
-    margin:0 auto;
-    margin-top:6rem;
     box-sizing:content-box;
-    border:3px solid black;
+   
+    box-shadow:5px 5px 25px rgba(14, 42, 61, 0.644);
 }
 .game-cell{
 
