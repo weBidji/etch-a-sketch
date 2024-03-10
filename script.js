@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", createGrid());
 
 let gameCells = document.querySelectorAll('.game-cell');
 
+
 gameCells.forEach(cell => {
     cell.style.width = `${Math.floor(800 / cellNumber)}px`;
     cell.style.height = `${Math.floor(800 / cellNumber)}px`;
@@ -47,17 +48,19 @@ document.addEventListener('mouseup', () => {
     isMouseDown = false;
 });
 
+const black = 'black';
+
 
 gameCells.forEach(cell => {
     cell.addEventListener('click', () => {
         let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-        cell.style.backgroundColor = randomColor;
+        blackMode? cell.style.backgroundColor = black : cell.style.backgroundColor = randomColor;
     });
 
     cell.addEventListener('mouseover', () => {
         if (dragMode && isMouseDown) {
             let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-            cell.style.backgroundColor = randomColor;
+            blackMode? cell.style.backgroundColor = black : cell.style.backgroundColor = randomColor;
         }
     });
 });
@@ -87,9 +90,31 @@ clearBtn.addEventListener('click', () => {
 
 })
 
+//black mode
+
+const rainbowBtn = document.querySelector('.rainbow-btn');
+let blackMode = false;
+
+rainbowBtn.addEventListener('click', () => {
+
+    blackMode = !blackMode;
+    updateRainbowBtn();
+})
+
+function updateRainbowBtn() {
+    if (blackMode) {
+        rainbowBtn.classList.toggle('black');
+        rainbowBtn.innerHTML = "Black<br>mode";
+    } else {
+        rainbowBtn.classList.toggle('black');
+        // rainbowBtn.style.background = "linear-gradient(89.7deg, rgba(223,0,0,1) 2.7%, rgba(214,91,0,1) 15.1%, rgba(233,245,0,1) 29.5%, rgba(23,255,17,1) 45.8%, rgba(29,255,255,1) 61.5%, rgba(5,17,255,1) 76.4%, rgba(202,0,253,1) 92.4%)";
+        rainbowBtn.innerHTML = 'Rainbow mode';
+    }
+}
+
 //toggle grid
 
-let gridBtn = document.getElementById('grid-btn');
+const gridBtn = document.getElementById('grid-btn');
 let gridActive = false;
 
 gridBtn.addEventListener('click', () => {
@@ -111,7 +136,7 @@ removeCellsBtn.addEventListener('click', () => {
 
     if (cellNumber > 5){
         cellNumber -= 5;
-        updateCells();
+        updateCells();cell.style.backgroundColor = randomColor;
     }  
 });
 
@@ -150,13 +175,15 @@ function updateCells() {
             
             cell.addEventListener('click', () => {
                 let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-                cell.style.backgroundColor = randomColor;
+                
+                blackMode? cell.style.backgroundColor = black : cell.style.backgroundColor = randomColor;
+                
             });
         
             cell.addEventListener('mouseover', () => {
                 if (dragMode && isMouseDown) {
                     let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-                    cell.style.backgroundColor = randomColor;
+                    blackMode? cell.style.backgroundColor = black : cell.style.backgroundColor = randomColor;
                 }
             });
         });
