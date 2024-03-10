@@ -1,5 +1,5 @@
 
-1//grid creation
+//create grid
 
 const gameScreen = document.getElementById('game-screen');
 
@@ -19,23 +19,39 @@ function createGrid(){
 
 document.addEventListener("DOMContentLoaded", createGrid());
 
-// painting
+//draw
 
 let gameCells = document.querySelectorAll('.game-cell');
+const dragBtn = document.getElementById('drag-btn');
+let dragMode = false;
 
-let randomColor = Math.floor(Math.random()*16777215).toString(16);
 
-gameCells.forEach(cell =>{
+gameCells.forEach(cell => {
+    cell.addEventListener('click', () => {
+        let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        cell.style.backgroundColor = randomColor;
+    });
 
     cell.addEventListener('mouseover', () => {
+        if (dragMode) {
+            let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            cell.style.backgroundColor = randomColor;
+        }
+    });
+});
 
-        let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
 
-        cell.style.backgroundColor = randomColor;
-    })
+dragBtn.addEventListener('click', () => {
+    dragMode = !dragMode;
+    dragBtn.classList.toggle('button-active');
+    
+
 })
 
-//clearing board
+
+
+
+//clear board
 
 const clearBtn = document.getElementById('clear-btn');
 
@@ -46,3 +62,18 @@ clearBtn.addEventListener('click', () => {
    })
 
 })
+
+//toggle grid
+
+let gridBtn = document.getElementById('grid-btn');
+
+gridBtn.addEventListener('click', () => {
+
+    gridBtn.classList.toggle('button-active')
+    gameCells.forEach(cell => {
+        cell.classList.toggle('grid-active');    })
+})
+
+
+
+
