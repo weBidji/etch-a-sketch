@@ -3,11 +3,11 @@
 *::after {
     margin:0;
     padding:0;
-    box-sizing:border-box;
+    /* box-sizing:border-box; */
 }
 :root{
 
-    --cell-side-length: 50px;
+    /* --cell-side-length: 50px; */
     --soft-white-blue: rgb(157, 194, 218);
     --blue-grey:rgba(3, 80, 94, 0.747);
     --madimi:'Madimi one', sans-serif;
@@ -78,14 +78,21 @@ h1{
     color:grey;
     /* transform:translateX(2px); */
 }
+
+.button-press{
+    box-shadow:none;
+    transform:translateY(-1px);
+    /* color:grey; */
+    /* transform:translateX(2px); */
+}
 .button:hover{
     cursor:pointer;
 }
 #game-screen{
     background-color:white;
     
-    width:calc(var(--cell-side-length) * 16);
-    height:calc(var(--cell-side-length) * 16);
+    width:800px;
+    height:800px;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
@@ -98,12 +105,15 @@ h1{
 
 width:var(--cell-side-length);
 height:var(--cell-side-length);
+border:1px solid rgba(184, 45, 161, 0.26);
+box-sizing:border-box;
 /* transition:border-color 1.8s ease-in; */
-
+/* border-radius:12px; */
 }
 
 .grid-active{
-border:0.5px solid rgba(127, 141, 145, 0.26);
+    border:1px solid rgba(190, 47, 21, 0.26);
+
 /* transition:border 0.2s ease-in; */
 }
 .game-cell:hover{
