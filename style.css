@@ -65,37 +65,44 @@ h1{
     font-family:var(--madimi);
     font-weight:900;
     box-shadow:3px 3px rgba(0, 0, 0, 0.993);
-    transition:transform 0.15s;
-    transition:box-shadow 0.15s;
+    /* transition:transform 0.15s, */
+    transition:box-shadow 0.20s, border 0.08s, transform 0.20s;
     
    
 }
 
 .rainbow-btn {
     background: linear-gradient( 89.7deg, rgba(223,0,0,1) 2.7%, rgba(214,91,0,1) 15.1%, rgba(233,245,0,1) 29.5%, rgba(23,255,17,1) 45.8%, rgba(29,255,255,1) 61.5%, rgba(5,17,255,1) 76.4%, rgba(202,0,253,1) 92.4% );
-    /* transition:background 0.5s ease-in-out; */
-    transition:transform 0.15s;
-    transition:box-shadow 0.15s;
+ 
+    transition:transform 0.25s, box-shadow 0.25s, background 0.5s;
+   
    
 }
 
 .black{
     background:black;
-    /* transition:background 0.5s ease-in-out; */
+    transition:transform 0.25s, box-shadow 0.25s, background 0.5s;
+  
 }
 
 
 
 .button-active{
     box-shadow:none;
-    transform:translateY(-1px);
-    color:grey;
+    transform:translateY(1px);
+    box-sizing:border-box;
+   
+    border-top: 1px inset rgb(0, 13, 37, 0.5);
+    border-left:1px inset rgb(0, 13, 37, 0.5);
+    
+   
    
 }
 
 .button-press{
     box-shadow:none;
-    transform:translateY(-1px);
+    transform:translateY(1px);
+    /* transition:box-shadow 0.15s, border 0.15s, transform 0.15s; */
 
 }
 .button:hover{
