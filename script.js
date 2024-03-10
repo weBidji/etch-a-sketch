@@ -90,9 +90,13 @@ clearBtn.addEventListener('click', () => {
 //toggle grid
 
 let gridBtn = document.getElementById('grid-btn');
+let gridActive = false;
 
 gridBtn.addEventListener('click', () => {
 
+    gridActive = !gridActive;
+
+    
     gridBtn.classList.toggle('button-active')
     gameCells.forEach(cell => {
         cell.classList.toggle('grid-active');    })
@@ -118,7 +122,7 @@ addCellsBtn.addEventListener('click', () => {
         cellNumber += 5;
         updateCells();
     }  
-    
+    ('grid-active');
 });
    
 
@@ -130,6 +134,14 @@ function updateCells() {
     setTimeout(() => {
         createGrid();
         gameCells = document.querySelectorAll('.game-cell');
+        if (gridActive){
+            gameCells.forEach(cell => {
+
+                cell.classList.remove('grid-active');
+                cell.classList.add('grid-active');
+            })
+        }
+        
 
         
         gameCells.forEach(cell => {

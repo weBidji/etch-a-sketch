@@ -27,7 +27,6 @@ body{
     display:flex;
     flex-direction:row;
     justify-content:space-around;
-    /* align-items:center; */
     background-color:var(--soft-white-blue);
     margin:0 auto;
     margin-top:5rem;
@@ -68,22 +67,23 @@ h1{
     box-shadow:3px 3px rgba(0, 0, 0, 0.993);
     transition:transform 0.15s;
     transition:box-shadow 0.15s;
-    /* transition:color 0.25s; */
+    
    
 }
+
+
 
 .button-active{
     box-shadow:none;
     transform:translateY(-1px);
     color:grey;
-    /* transform:translateX(2px); */
+   
 }
 
 .button-press{
     box-shadow:none;
     transform:translateY(-1px);
-    /* color:grey; */
-    /* transform:translateX(2px); */
+
 }
 .button:hover{
     cursor:pointer;
@@ -105,16 +105,16 @@ h1{
 
 width:var(--cell-side-length);
 height:var(--cell-side-length);
-border:1px solid rgba(184, 45, 161, 0.26);
+/* border:1px solid rgba(184, 45, 161, 0.26); */
 box-sizing:border-box;
-/* transition:border-color 1.8s ease-in; */
-/* border-radius:12px; */
+
 }
 
 .grid-active{
-    border:1px solid rgba(190, 47, 21, 0.26);
+    /* border:1px solid rgba(190, 47, 21, 0.26); */
+    border:1px solid rgba(184, 45, 161, 0.26);
 
-/* transition:border 0.2s ease-in; */
+
 }
 .game-cell:hover{
     cursor:crosshair;
